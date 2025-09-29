@@ -1,5 +1,5 @@
 <template>
-  <div class="scroll-text">
+  <!-- <div class="scroll-text">
       <p>
         📢 ခုလက်ရှိ ဏနန်း သည်  ❤️ {{ convertToMyanmarNumber(currentTwoD) }} ❤️ ဖြစ်ပါတယ်နော် 🔥
         🎓 EDUCATIONAL PURPOSE ONLY 
@@ -7,10 +7,9 @@
         🔥 နေ့စဥ် ထိုင်း တိုက်ရိုက် Live တင်ဆက်ပေးနေတာဖြစ်လို့ 👍 LIKE & 🔔 SUBSCRIBE ပြုလုပ်ပေးခဲ့ပြီး အားပေးလို့ရပါတယ်. 
         📢 ခုလက်ရှိ ဏနန်း သည်  ❤️ {{ convertToMyanmarNumber(currentTwoD) }} ❤️ ဖြစ်ပါတယ်နော် 🔥 
       </p>
-    </div>
+    </div> -->
   <div class="app">
     <div class="container">
-      
       <!-- Right Panel -->
       <div class="right" v-if="twoDeeLive">
         <div class="phone">
@@ -60,14 +59,14 @@
           <li>🚫 NOT Gambling Advice / Promotion</li>
         </ul>
         <div class="time-box">
-          <p class="label">ထွက်မည့် အချိန်</p>
+          <p class="label">ထွက်မည့် အချိန်  .......<span class="text-output">[" {{ convertToMyanmarNumber(currentTwoD) }} "]</span></p>
           <p class="main-time">{{ mainTime }}</p>
           <p class="countdown">{{ countdown }}</p>
         </div>
 
         <div class="date-row">
-          <div class="date-box">{{ randomKey }} ဘရိတ်</div>
-          <div class="num-box">{{ randomKey1 }} ကီး</div>
+          <div class="date-box">{{ randomKey }} <span class="text">ဘရိတ်</span></div>
+          <div class="num-box">{{ randomKey1 }} <span class="text">ကီး</span></div>
         </div>
         <!-- Footer -->
         <div class="subscribe">
@@ -76,9 +75,7 @@
           </button>
         </div>
       </div>
-    </div>
-
-    
+    </div>    
   </div>
 </template>
 
@@ -287,7 +284,7 @@ export default {
 /* left panel */
 .left {
   background: white;
-  padding: 20px;
+  padding: 15px;
   border-radius: 12px;
   gap: 30px;
 }
@@ -306,7 +303,7 @@ export default {
   background: #ffffff;
   border-radius: 40px;
   padding: 20px 15px;
-  max-width: 480px;
+  max-width: 440px;
   margin: auto;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
   border: 8px solid #000;
@@ -332,7 +329,7 @@ export default {
   background: white;
   padding: 10px;
   width: 100%;
-  max-width: 420px;
+  max-width: 380px;
   margin-bottom: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -340,9 +337,10 @@ export default {
 
 .big-number {
   color: green;
-  font-size: 7.5rem;
+  font-size: 8.5rem;
   text-align: center;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: float-text 2s steps(1) infinite;
 }
 
 .updated {
@@ -355,7 +353,7 @@ export default {
 
 .card {
   width: 100%;
-  max-width: 420px;
+  max-width: 380px;
   background-color: #fc1818;
   color: white;
   border-radius: 10px;
@@ -393,15 +391,7 @@ export default {
   font-size: 20px;
 }
 
-/* countdown */
-.output-number {
-  text-align: center;
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  color: #000000;
-  font-size: 1.5rem;
-}
+
 .result{
   font-size: 3.2rem;
   color: #ff0000;
@@ -438,11 +428,11 @@ export default {
 }
 .date-box, .num-box {
   border: 2px solid #494949;
-  padding: 5px;
+  padding: 15px;
   border-radius: 15px;
   flex: auto;
   color: #000000;
-  font-size: 2rem;
+  font-size: 2.8rem;
   font-weight: bold;
   text-align: center;
 }
@@ -531,9 +521,14 @@ export default {
     transform: translateX(0);
   }
   50% {
-    transform: translateX(20px);
+    transform: translateX(30px);
   }
 }
-
+.text{
+  font-size: 2.2rem;
+}
+.text-output{
+  font-size: 3.5rem;
+}
 
 </style>
