@@ -83,6 +83,6 @@ nav a.router-link-exact-active {
 }
 
 .twod {
-  font-size: 2.3rem;
+  font-size: 2.5rem;
 }
 </style>

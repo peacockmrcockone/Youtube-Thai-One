@@ -1,14 +1,16 @@
 <template>
   <div class="scroll-text">
       <p>
-        📢 ခုလက်ရှိ "ဂဏန်း" သည်  ❤️ {{ convertToMyanmarNumber(currentTwoD) }} ❤️ ဖြစ်ပါတယ်နော် 🔥 
+        📢 ခုလက်ရှိ ဏနန်း သည်  ❤️ {{ convertToMyanmarNumber(currentTwoD) }} ❤️ ဖြစ်ပါတယ်နော် 🔥
+        🎓 EDUCATIONAL PURPOSE ONLY 
+        🚫 NOT Gambling Advice / Promotion
         🔥 နေ့စဥ် ထိုင်း တိုက်ရိုက် Live တင်ဆက်ပေးနေတာဖြစ်လို့ 👍 LIKE & 🔔 SUBSCRIBE ပြုလုပ်ပေးခဲ့ပြီး အားပေးလို့ရပါတယ်. 
-        📢 ခုလက်ရှိ "ဂဏန်း" သည်  ❤️ {{ convertToMyanmarNumber(currentTwoD) }} ❤️ ဖြစ်ပါတယ်နော် 🔥 
+        📢 ခုလက်ရှိ ဏနန်း သည်  ❤️ {{ convertToMyanmarNumber(currentTwoD) }} ❤️ ဖြစ်ပါတယ်နော် 🔥 
       </p>
     </div>
   <div class="app">
     <div class="container">
-
+      
       <!-- Right Panel -->
       <div class="right" v-if="twoDeeLive">
         <div class="phone">
@@ -49,33 +51,34 @@
             </div>
           </div>
         </div>
-
       </div>
       <!-- Left Panel -->
-     <div class="left" v-if="twoDeeLive">
-       <div class="output-number">
-         <h2 class="output-label"> ထွက်ဂဏန်း  </h2>
-         <!-- Auto change between [1] & [3] -->
-         <h1 class="result"> [ {{ convertToMyanmarNumber(currentTwoD) }} ] </h1>
-       </div>
-       <div class="time-box">
-         <p class="label">ဂဏန်းထွက်ရန် အချိန်</p>
-         <p class="main-time">{{ mainTime }}</p>
-         <p class="countdown">{{ countdown }}</p>
-       </div>
+      <div class="left" v-if="twoDeeLive">
+        <ul>
+          <li>🎓 EDUCATIONAL PURPOSE ONLY  </li>
+          <li>📊 Market Data & Probability Learning </li>
+          <li>🚫 NOT Gambling Advice / Promotion</li>
+        </ul>
+        <div class="time-box">
+          <p class="label">ထွက်မည့် အချိန်</p>
+          <p class="main-time">{{ mainTime }}</p>
+          <p class="countdown">{{ countdown }}</p>
+        </div>
 
-       <div class="date-row">
-         <div class="date-box">{{ randomKey }} ဘရိတ်</div>
-         <div class="num-box">{{ randomKey1 }} ကီး</div>
-       </div>
-       <!-- Footer -->
-       <div class="subscribe">
-         <button :class="{green:isGreen,red:!isGreen}">
-           🔔 LIKE & SUBSCRIBE
-         </button>
-       </div>
-     </div>
+        <div class="date-row">
+          <div class="date-box">{{ randomKey }} ဘရိတ်</div>
+          <div class="num-box">{{ randomKey1 }} ကီး</div>
+        </div>
+        <!-- Footer -->
+        <div class="subscribe">
+          <button :class="{green:isGreen,red:!isGreen}">
+            🔔 LIKE & SUBSCRIBE
+          </button>
+        </div>
+      </div>
     </div>
+
+    
   </div>
 </template>
 
@@ -265,7 +268,7 @@ export default {
 .app {
   font-family: sans-serif;
   background: #f0f0f0;
-  padding: 10px;
+  padding: 20px;
 }
 
 .container {
@@ -277,7 +280,7 @@ export default {
 
 .left,
 .right {
-  flex: 0 0 57%;   /* 50%-50% space equally */
+  flex: 0 0 50%;   /* 50%-50% space equally */
   box-sizing: border-box;
 }
 
@@ -303,7 +306,7 @@ export default {
   background: #ffffff;
   border-radius: 40px;
   padding: 20px 15px;
-  max-width: 440px;
+  max-width: 480px;
   margin: auto;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
   border: 8px solid #000;
@@ -329,7 +332,7 @@ export default {
   background: white;
   padding: 10px;
   width: 100%;
-  max-width: 380px;
+  max-width: 420px;
   margin-bottom: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -337,7 +340,7 @@ export default {
 
 .big-number {
   color: green;
-  font-size: 7.2rem;
+  font-size: 7.5rem;
   text-align: center;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -352,7 +355,7 @@ export default {
 
 .card {
   width: 100%;
-  max-width: 380px;
+  max-width: 420px;
   background-color: #fc1818;
   color: white;
   border-radius: 10px;
@@ -435,15 +438,14 @@ export default {
 }
 .date-box, .num-box {
   border: 2px solid #494949;
-  padding: 15px;
+  padding: 5px;
   border-radius: 15px;
   flex: auto;
   color: #000000;
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: bold;
   text-align: center;
 }
-
 /* subscribe */
 .subscribe {
   margin-top: 30px;
@@ -451,12 +453,13 @@ export default {
   display: flex;
   justify-content: center;
   gap: 15px;   /* space between buttons */
+  animation: float-text 3s ease-in-out infinite;
 }
 
 .subscribe button {
   color: white;
   padding: 10px 30px;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -478,7 +481,7 @@ export default {
 }
 
 .scroll-text p {
-  animation: scroll-left 40s linear infinite; /* padding မသုံးတော့ */
+  animation: scroll-left 45s linear infinite; /* padding မသုံးတော့ */
   color: rgb(0, 0, 0);
   font-size: 1.5rem;
   font-weight: bold;
@@ -491,10 +494,46 @@ export default {
     transform: translateX(100%);   /* စ text ကို container ၏ ညာဘက်အပြင်ကနေ စ */
   }
   100% {
-    transform: translateX(-70%);  /* လုံးဝ ဘယ်ဘက်အပြင်ထွက်သွား */
+    transform: translateX(-100%);  /* လုံးဝ ဘယ်ဘက်အပြင်ထွက်သွား */
   }
 }
 
+/* Left panel list style */
+.left ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.left li {
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #000;
+  animation: float-text 3s ease-in-out infinite;
+}
+
+/* တစ်ခုချင်းစီ interval အနည်းငယ်ကြာပြီးစလိုက်အောင် */
+.left li:nth-child(1) {
+  animation-delay: 0s;
+}
+.left li:nth-child(2) {
+  animation-delay: 1s;
+}
+.left li:nth-child(3) {
+  animation-delay: 2s;
+}
+
+/* left-right လှုပ် animation */
+@keyframes float-text {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+}
 
 
 </style>
