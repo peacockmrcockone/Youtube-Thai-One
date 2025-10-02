@@ -1,7 +1,7 @@
 <template>
   <nav>
     <router-link to="/" class="twod">
-      {{ myanmarDate }} ရက် - {{ dayInMyanmar }}နေ့ {{ session }} ( ထိုင်း တိုက်ရိုက်၂ )
+      {{ myanmarDate }} ရက် - {{ dayInMyanmar }}နေ့ {{ session }} ( သပြေ တူးဒီ တိုက်ရိုက် )
     </router-link> 
   </nav>
   <router-view/>
@@ -84,5 +84,16 @@ nav a.router-link-exact-active {
 
 .twod {
   font-size: 2.5rem;
+  display: inline-block;
+  white-space: nowrap; /* စာကြောင်းတစ်ခုအတိုင်း ပြထားရန် */
+  animation: scrollText 15s linear infinite;
+}
+@keyframes scrollText {
+  0% {
+    transform: translateX(70%); /* စာသားကို ဘယ်ဘက်အပြင်မှစ */
+  }
+  100% {
+    transform: translateX(-80%); /* စာသားကိုညာဘက်အပြင်ထိရွေ့ */
+  }
 }
 </style>

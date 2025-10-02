@@ -138,13 +138,13 @@ export default {
       let key;
       do {
         const temp = [];
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 2; i++) {
           temp.push(Math.floor(Math.random() * 10));
         }
         key = temp;
         // while condition = မလိုချင်တဲ့ pattern တွေကို စစ်
       } while (
-        new Set(key).size < 3   // တူနေတဲ့ digit ရှိရင် reject
+        new Set(key).size < 2   // တူနေတဲ့ digit ရှိရင် reject
       );
       return key.join("-");
     },
@@ -337,7 +337,7 @@ export default {
 
 .big-number {
   color: green;
-  font-size: 8.5rem;
+  font-size: 9rem;
   text-align: center;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   animation: float-text 2s steps(1) infinite;
@@ -443,7 +443,7 @@ export default {
   display: flex;
   justify-content: center;
   gap: 15px;   /* space between buttons */
-  animation: float-text 3s ease-in-out infinite;
+  animation: float-text 4s ease-in-out infinite;
 }
 
 .subscribe button {
@@ -496,7 +496,7 @@ export default {
 }
 
 .left li {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 10px;
   text-align: center;
